@@ -1,0 +1,3880 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "BEAUTY NATION"
+host: localhost:10010
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /answer:
+    post:
+      tags:
+      - "answer"
+      summary: "Создаем ответ"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "answer"
+        description: ""
+        required: true
+        schema:
+            $ref: "#/definitions/answers"
+      responses:
+        default:
+          description: "Успешно"
+  /answer/{id}:
+    get:
+      tags:
+      - "answer"
+      summary: "Получаем ответ по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id ответа, кторый нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/answers"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Ответ не найден"
+    put:
+      tags:
+      - "answer"
+      summary: "Обновить информацию о ответе"
+      description: ""
+      operationId: "updateAnswer"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого ответа"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "answer"
+        description: "Обновляем объект ответ"
+        required: true
+        schema:
+          $ref: "#/definitions/answers"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Ответ не найден"
+    delete:
+      tags:
+      - "answer"
+      summary: "Удаление ответа"
+      description: ""
+      operationId: "deleteAnswer"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого ответа"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Ответ не найден"
+  /blog:
+    post:
+      tags:
+      - "blog"
+      summary: "Создаем статью для блога"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "blog"
+        description: "Создаем объект блог"
+        required: true
+        schema:
+            $ref: "#/definitions/blogs"
+      responses:
+        default:
+          description: "Успешно"
+  /blog/{id}:
+    get:
+      tags:
+      - "blog"
+      summary: "Получаем блог по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id коорый нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/blogs"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Блог не найден"
+    put:
+      tags:
+      - "blog"
+      summary: "Обновить информацию о блоге"
+      description: ""
+      operationId: "updateBlog"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого блога"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "blog"
+        description: "Обновляем объект блог"
+        required: true
+        schema:
+          $ref: "#/definitions/blogs"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Блог не найден"
+    delete:
+      tags:
+      - "blog"
+      summary: "Удаление блога"
+      description: ""
+      operationId: "deleteBlog"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого блога"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Ответ не найден"
+  /cart:
+    post:
+      tags:
+      - "cart"
+      summary: "Создание корзины"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "cart"
+        description: "Создаем объект корзина"
+        required: true
+        schema:
+            $ref: "#/definitions/carts"
+      responses:
+        default:
+          description: "Успешно"
+  /cart/{id}:
+    get:
+      tags:
+      - "cart"
+      summary: "Получаем корзину по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id корзины которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/carts"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Корзина не найдена"
+    put:
+      tags:
+      - "cart"
+      summary: "Обновить информацию о корзине"
+      description: ""
+      operationId: "updateСart"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемой корзины"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "cart"
+        description: "Обновляем объект корзина"
+        required: true
+        schema:
+          $ref: "#/definitions/blogs"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Корзина не найдена"
+    delete:
+      tags:
+      - "cart"
+      summary: "Удаление корзины"
+      description: ""
+      operationId: "deleteCart"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой корзины"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Корзина не найдена"
+  /commentHomework:
+    post:
+      tags:
+      - "commentHomework"
+      summary: "Создаем комментарий к домашней работе"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "commentHomework"
+        description: "Создаем объект commentHomework"
+        required: true
+        schema:
+            $ref: "#/definitions/commentsHomeworks"
+      responses:
+        default:
+          description: "Успешно"
+  /commentsHomework/{id}:
+    get:
+      tags:
+      - "commentHomework"
+      summary: "Получить комментарий к домашней работе по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id комментария который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/commentsHomeworks"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найден"
+    put:
+      tags:
+      - "commentHomework"
+      summary: "Обновить информацию о комментарии"
+      description: ""
+      operationId: "updateСommentHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого комментария"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "commentHomework"
+        description: "Обновляем объект commentHomework"
+        required: true
+        schema:
+          $ref: "#/definitions/commentsHomeworks"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Корзина не найдена"
+    delete:
+      tags:
+      - "commentHomework"
+      summary: "Удаление комментария"
+      description: ""
+      operationId: "deleteСommentHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого комментария"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найдена"
+  /constructor:
+    post:
+      tags:
+      - "constructor"
+      summary: "Создаем блок-конструктор"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "constructor"
+        description: "Создаем объект constructor"
+        required: true
+        schema:
+            $ref: "#/definitions/constructors"
+      responses:
+        default:
+          description: "Успешно"
+  /constructor/{id}:
+    get:
+      tags:
+      - "constructor"
+      summary: "Получить блок-конструктор по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id блока-конструктора, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/constructors"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найден"
+    put:
+      tags:
+        - "constructor"
+      summary: "Обновить информацию о блоке-конструкторе"
+      description: ""
+      operationId: "updateСonstructor"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого блока-конструктора"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "constructor"
+        description: "Обновляем объект constructor"
+        required: true
+        schema:
+          $ref: "#/definitions/constructors"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Блок не найдена"
+    delete:
+      tags:
+      - "constructor"
+      summary: "Удаление блок-конструктор"
+      description: ""
+      operationId: "deleteСonstructor"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого блока-конструктора"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Блок не найдена"
+  /course:
+    post:
+      tags:
+      - "course"
+      summary: "Создаем курс"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "course"
+        description: "Создаем объект course"
+        required: true
+        schema:
+            $ref: "#/definitions/courses"
+      responses:
+        default:
+          description: "Успешно"
+  /course/{id}:
+    get:
+      tags:
+      - "course"
+      summary: "Получить курс по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id курса, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/courses"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Курс не найден"
+    put:
+      tags:
+      - "course"
+      summary: "Обновить информацию о курсе"
+      description: ""
+      operationId: "updateСourse"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого курса"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "course"
+        description: "Обновляем объект course"
+        required: true
+        schema:
+          $ref: "#/definitions/courses"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Курс не найден"
+    delete:
+      tags:
+      - "course"
+      summary: "Удаление курса"
+      description: ""
+      operationId: "deleteСourse"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого курса"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Курс не найден"
+  /coursesAllSubscribe:
+    post:
+      tags:
+      - "coursesAllSubscribe"
+      summary: "Создаем подписку на новые курсы"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "coursesAllSubscribe"
+        description: "Создаем объект coursesAllSubscribe"
+        required: true
+        schema:
+            $ref: "#/definitions/coursesAllSubscribe"
+      responses:
+        default:
+          description: "Успешно"
+  /coursesAllSubscribe/{id}:
+    get:
+      tags:
+      - "coursesAllSubscribe"
+      summary: "Получить подписку на новые курсы по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id подписки, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/coursesAllSubscribe"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+    put:
+      tags:
+      - "coursesAllSubscribe"
+      summary: "Обновить информацию о подписке на новые курсы"
+      description: ""
+      operationId: "updateСoursesAllSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемой подписки"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "coursesAllSubscribe"
+        description: "Обновляем объект coursesAllSubscribe"
+        required: true
+        schema:
+          $ref: "#/definitions/coursesAllSubscribe"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+    delete:
+      tags:
+      - "coursesAllSubscribe"
+      summary: "Удаление подписки на новые курсы"
+      description: ""
+      operationId: "deleteСoursesAllSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой подписки"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+  /dictionarie:
+    post:
+      tags:
+      - "dictionarie"
+      summary: "Создаем словарь фраз для контента"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "dictionarie"
+        description: "Создаем объект dictionarie"
+        required: true
+        schema:
+            $ref: "#/definitions/dictionaries"
+      responses:
+        default:
+          description: "Успешно"
+  /dictionarie/{id}:
+    get:
+      tags:
+      - "dictionarie"
+      summary: "Получить словарь фраз для контента по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id словаря, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/dictionaries"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Словарь не найдена"
+    put:
+      tags:
+      - "dictionarie"
+      summary: "Обновить информацию о словаре фраз для контента"
+      description: ""
+      operationId: "updateDictionarie"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого словаря"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "dictionarie"
+        description: "Обновляем объект dictionarie"
+        required: true
+        schema:
+          $ref: "#/definitions/dictionaries"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+    delete:
+      tags:
+      - "dictionarie"
+      summary: "Удаление словаря фраз"
+      description: ""
+      operationId: "deleteDictionarie"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого словаря"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Словарь не найдена"
+  /direction:
+    post:
+      tags:
+      - "direction"
+      summary: "Создаем направление"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "direction"
+        description: "Создаем объект direction"
+        required: true
+        schema:
+            $ref: "#/definitions/directions"
+      responses:
+        default:
+          description: "Успешно"
+  /direction/{id}:
+    get:
+      tags:
+      - "direction"
+      summary: "Получить направление по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id напраяления, которое нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/directions"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Направление не найдено"
+    put:
+      tags:
+      - "direction"
+      summary: "Обновить информацию о направлении"
+      description: ""
+      operationId: "updateDirection"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id направления"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "direction"
+        description: "Обновляем объект direction"
+        required: true
+        schema:
+          $ref: "#/definitions/directions"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Направление не найдено"
+    delete:
+      tags:
+      - "direction"
+      summary: "Удаление направления"
+      description: ""
+      operationId: "deleteDirection"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого направления"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Направления не найдено"
+  /homework:
+    post:
+      tags:
+      - "homework"
+      summary: "Создаем домашнюю работу"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "homework"
+        description: "Создаем объект homework"
+        required: true
+        schema:
+            $ref: "#/definitions/homeworks"
+      responses:
+        default:
+          description: "Успешно"
+  /homework/{id}:
+    get:
+      tags:
+      - "homework"
+      summary: "Получить домашнюю работу по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id домашней работы, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/homeworks"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Домашняя работа не найдена"
+    put:
+      tags:
+      - "homework"
+      summary: "Обновить информацию о домашней работе"
+      description: ""
+      operationId: "updateHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id домашней работы"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "homework"
+        description: "Обновляем объект homework"
+        required: true
+        schema:
+          $ref: "#/definitions/homeworks"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Домашняя работа не найдено"
+    delete:
+      tags:
+      - "homework"
+      summary: "Удаление домашней работы"
+      description: ""
+      operationId: "deleteHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой домашней работы"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Домашняя работа не найдено"
+  /lesson:
+    post:
+      tags:
+      - "lesson"
+      summary: "Создаем урок"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "lesson"
+        description: "Создаем объект lesson"
+        required: true
+        schema:
+            $ref: "#/definitions/lessons"
+      responses:
+        default:
+          description: "Успешно"
+  /lesson/{id}:
+    get:
+      tags:
+      - "lesson"
+      summary: "Получить урок по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id урока, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/lessons"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Урок не найден"
+    put:
+      tags:
+      - "lesson"
+      summary: "Обновить информацию о уроке"
+      description: ""
+      operationId: "updateLesson"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id урока"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "lesson"
+        description: "Обновляем объект lesson"
+        required: true
+        schema:
+          $ref: "#/definitions/lessons"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Урок не найден"
+    delete:
+      tags:
+      - "lesson"
+      summary: "Удаление урока"
+      description: ""
+      operationId: "deleteLesson"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого урока"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Урок не найден"
+  /loyalty:
+    post:
+      tags:
+      - "loyalty"
+      summary: "Создаем лояльность"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "loyalty"
+        description: "Создаем объект loyalty"
+        required: true
+        schema:
+            $ref: "#/definitions/loyalties"
+      responses:
+        default:
+          description: "Успешно"
+  /loyalty/{id}:
+    get:
+      tags:
+      - "loyalty"
+      summary: "Получить лояльность по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id лояльности, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/loyalties"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Лояльность не найдена"
+    put:
+      tags:
+      - "loyalty"
+      summary: "Обновить информацию о лояльности"
+      description: ""
+      operationId: "updateLoyalty"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id лояльности"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "loyalty"
+        description: "Обновляем объект loyalty"
+        required: true
+        schema:
+          $ref: "#/definitions/loyalties"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Лояльность не найдена"
+    delete:
+      tags:
+      - "loyalty"
+      summary: "Удаление лояльности"
+      description: ""
+      operationId: "deleteLoyalty"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой лояльности"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Лояльность не найден"
+  /massMediaMention:
+    post:
+      tags:
+      - "massMediaMention"
+      summary: "Добавляем упоминание в СМИ"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "massMediaMention"
+        description: "Создаеми объект massMediaMention"
+        required: true
+        schema:
+            $ref: "#/definitions/massMediaMentions"
+      responses:
+        default:
+          description: "Успешно"
+  /massMediaMention{id}:
+    get:
+      tags:
+      - "massMediaMention"
+      summary: "Получаем упоминание в СМИ по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id упоминания которое нам необходимо"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/massMediaMentions"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Упоминание не найдено"
+    put:
+      tags:
+      - "massMediaMention"
+      summary: "Обновить информацию о упоминании в СМИ"
+      description: ""
+      operationId: "updateMassMediaMention"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого упоминания"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "massMediaMention"
+        description: "Обновляем объект massMediaMention"
+        required: true
+        schema:
+          $ref: "#/definitions/massMediaMentions"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Упоминание не найдено"
+    delete:
+      tags:
+      - "massMediaMention"
+      summary: "Удаление упоминания в СМИ"
+      description: ""
+      operationId: "deleteMassMediaMention"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого упоминания"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Упоминание не найдено"
+  /module:
+    post:
+      tags:
+      - "module"
+      summary: "Создаем модуль"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "module"
+        description: "Создаем объект module"
+        required: true
+        schema:
+            $ref: "#/definitions/modules"
+      responses:
+        default:
+          description: "Успешно"
+  /module/{id}:
+    get:
+      tags:
+      - "module"
+      summary: "Получить модуль по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id модуля, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/modules"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Модуль не найдена"
+    put:
+      tags:
+      - "module"
+      summary: "Обновить информацию о модуле"
+      description: ""
+      operationId: "updateModule"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id модуля"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "module"
+        description: "Обновляем объект module"
+        required: true
+        schema:
+          $ref: "#/definitions/modules"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Модуль не найден"
+    delete:
+      tags:
+      - "module"
+      summary: "Удаление модуля"
+      description: ""
+      operationId: "deleteModule"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого модуля"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Модуль не найден"
+  /partner:
+    post:
+      tags:
+      - "partner"
+      summary: "Создание партнера"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "partner"
+        description: "Создаем объект партнер"
+        required: true
+        schema:
+            $ref: "#/definitions/partners"
+      responses:
+        default:
+          description: "Успешно"
+  /partner/{id}:
+    get:
+      tags:
+      - "partner"
+      summary: "Получаем партнера по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id партнера, которого нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/partners"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Партнер не найден"
+    put:
+      tags:
+      - "partner"
+      summary: "Обновить информацию о партнере"
+      description: ""
+      operationId: "updatePartner"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого партнера"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "partner"
+        description: "Обновляем объект партнер"
+        required: true
+        schema:
+          $ref: "#/definitions/partners"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Партнер не найден"
+    delete:
+      tags:
+      - "partner"
+      summary: "Удаление партнера"
+      description: ""
+      operationId: "deletePartner"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого партнера"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Партнер не найден"
+  /poll:
+    post:
+      tags:
+      - "poll"
+      summary: "Создаем тест"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "poll"
+        description: "Создаем объект poll"
+        required: true
+        schema:
+            $ref: "#/definitions/polls"
+      responses:
+        default:
+          description: "Успешно"
+  /poll/{id}:
+    get:
+      tags:
+      - "poll"
+      summary: "Получить тест по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id теста, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/polls"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Тест не найдена"
+    put:
+      tags:
+      - "poll"
+      summary: "Обновить информацию о тесте"
+      description: ""
+      operationId: "updatePoll"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id теста"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "poll"
+        description: "Обновляем объект poll"
+        required: true
+        schema:
+          $ref: "#/definitions/polls"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Тест не найден"
+    delete:
+      tags:
+      - "poll"
+      summary: "Удаление теста"
+      description: ""
+      operationId: "deletePoll"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого теста"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Тест не найден"
+  /country/{id}:
+    get:
+      tags:
+      - "country"
+      summary: "Получаем страну по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id страны, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/postcountries"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Страна не найдена"
+  /subject/{id}:
+    get:
+      tags:
+      - "subject"
+      summary: "Получаем субьект по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id субьекта, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/postsubjects"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Субьект не найден"
+  /promocodeRequest:
+    post:
+      tags:
+      - "promocodeRequest"
+      summary: "Создаем заявку для получения промокода"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "promocodeRequest"
+        description: "Создаем объект promocodeRequest"
+        required: true
+        schema:
+            $ref: "#/definitions/promocoderequests"
+      responses:
+        default:
+          description: "Успешно"
+  /promocodeRequest/{id}:
+    get:
+      tags:
+      - "promocodeRequest"
+      summary: "Получить заявку по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id заявки, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/promocoderequests"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+    put:
+      tags:
+      - "promocodeRequest"
+      summary: "Обновить информацию о заявке"
+      description: ""
+      operationId: "updatePromocodeRequest"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id заявки"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "promocodeRequest"
+        description: "Обновляем объект promocodeRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/promocoderequests"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+    delete:
+      tags:
+      - "promocodeRequest"
+      summary: "Удаление заявки"
+      description: ""
+      operationId: "deletePromocodeRequest"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой заявки"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+  /promocode:
+    post:
+      tags:
+      - "promocode"
+      summary: "Создаем промокод"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "promocode"
+        description: "Создаем объект promocode"
+        required: true
+        schema:
+            $ref: "#/definitions/promocodes"
+      responses:
+        default:
+          description: "Успешно"
+  /promocode/{id}:
+    get:
+      tags:
+      - "promocode"
+      summary: "Получить промокод по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id промокода, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/promocodes"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Промокод не найдена"
+    put:
+      tags:
+      - "promocode"
+      summary: "Обновить информацию о промокоде"
+      description: ""
+      operationId: "updatePromocode"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id промокода"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "promocode"
+        description: "Обновляем объект promocode"
+        required: true
+        schema:
+          $ref: "#/definitions/promocodes"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Промокод не найден"
+    delete:
+      tags:
+      - "promocode"
+      summary: "Удаление промокода"
+      description: ""
+      operationId: "deletePromocode"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого промокода"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Промокод не найден"
+  /question:
+    post:
+      tags:
+      - "question"
+      summary: "Создаем вопрос для теста"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "question"
+        description: "Создаем объект question"
+        required: true
+        schema:
+            $ref: "#/definitions/questions"
+      responses:
+        default:
+          description: "Успешно"
+  /question/{id}:
+    get:
+      tags:
+      - "question"
+      summary: "Получить вопрос для теста по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id вопроса, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/questions"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вопрос не найден"
+    put:
+      tags:
+      - "question"
+      summary: "Обновить информацию о вопросе"
+      description: ""
+      operationId: "updateQuestion"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id вопроса"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "question"
+        description: "Обновляем объект question"
+        required: true
+        schema:
+          $ref: "#/definitions/questions"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вопрос не найден"
+    delete:
+      tags:
+      - "question"
+      summary: "Удаление вопроса для теста"
+      description: ""
+      operationId: "deleteQuestion"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого вопроса"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вопрос не найден"
+  /rating:
+    post:
+      tags:
+      - "rating"
+      summary: "Создаем рейтинг для урока"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "rating"
+        description: "Создаем объект rating"
+        required: true
+        schema:
+            $ref: "#/definitions/ratings"
+      responses:
+        default:
+          description: "Успешно"
+  /rating/{id}:
+    get:
+      tags:
+      - "rating"
+      summary: "Получить рейтинг для урока по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id рейтинга, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/ratings"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Рейтинг не найден"
+    put:
+      tags:
+      - "rating"
+      summary: "Обновить информацию о рейтинге"
+      description: ""
+      operationId: "updateRating"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id рейтинга"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "rating"
+        description: "Обновляем объект rating"
+        required: true
+        schema:
+          $ref: "#/definitions/ratings"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Рейтинг не найден"
+    delete:
+      tags:
+      - "rating"
+      summary: "Удаление рейтинга для урока"
+      description: ""
+      operationId: "deleteRating"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого рейтинга"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Рейтинг не найден"
+  /role:
+    post:
+      tags:
+      - "role"
+      summary: "Создаем роль"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "role"
+        description: "Создаем объект role"
+        required: true
+        schema:
+            $ref: "#/definitions/roles"
+      responses:
+        default:
+          description: "Успешно"
+  /role/{id}:
+    get:
+      tags:
+      - "role"
+      summary: "Получить роль по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id роли, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/roles"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Роль не найдена"
+    put:
+      tags:
+      - "role"
+      summary: "Обновить информацию о роле"
+      description: ""
+      operationId: "updateRole"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id статуса"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "role"
+        description: "Обновляем объект role"
+        required: true
+        schema:
+          $ref: "#/definitions/roles"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Роль не найдена"
+    delete:
+      tags:
+      - "role"
+      summary: "Удаление роли"
+      description: ""
+      operationId: "deleteRole"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой роли"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Роль не найдена"
+  /statuseHomework:
+    post:
+      tags:
+      - "statuseHomework"
+      summary: "Создаем статус домашней работы"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "statuseHomework"
+        description: "Создаем объект statuseHomework"
+        required: true
+        schema:
+            $ref: "#/definitions/statuseshomeworks"
+      responses:
+        default:
+          description: "Успешно"
+  /statuseHomework/{id}:
+    get:
+      tags:
+      - "statuseHomework"
+      summary: "Получить статус по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id статуса, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/statuseshomeworks"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Статус не найден"
+    put:
+      tags:
+      - "statuseHomework"
+      summary: "Обновить информацию о статуса"
+      description: ""
+      operationId: "updateStatuseHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id статуса"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "statuseHomework"
+        description: "Обновляем объект statuseHomework"
+        required: true
+        schema:
+          $ref: "#/definitions/statuseshomeworks"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Статус не найден"
+    delete:
+      tags:
+      - "statuseHomework"
+      summary: "Удаление статуса"
+      description: ""
+      operationId: "deleteStatuseHomework"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого статуса"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Статус не найден"
+  /studentReview:
+    post:
+      tags:
+      - "studentReview"
+      summary: "Создаем отзыв студента"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "studentReview"
+        description: "Создаем объект studentReview"
+        required: true
+        schema:
+            $ref: "#/definitions/studentReview"
+      responses:
+        default:
+          description: "Успешно"
+  /studentReview/{id}:
+    get:
+      tags:
+      - "studentReview"
+      summary: "Получить отзыв по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id отзыва, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/studentReview"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Отзыв не найден"
+    put:
+      tags:
+      - "studentReview"
+      summary: "Обновить информацию о отзыве"
+      description: ""
+      operationId: "updateStudentReview"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id отзыва"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "studentReview"
+        description: "Обновляем объект studentReview"
+        required: true
+        schema:
+          $ref: "#/definitions/studentReview"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Отзыв не найден"
+    delete:
+      tags:
+      - "studentReview"
+      summary: "Удаление отзыва"
+      description: ""
+      operationId: "deleteStudentReview"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого отзыва"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Отзыв не найден"
+  /studentStory:
+    post:
+      tags:
+      - "studentStory"
+      summary: "Создаем историю студента"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "studentStory"
+        description: "Создаем объект studentStory"
+        required: true
+        schema:
+            $ref: "#/definitions/studentStories"
+      responses:
+        default:
+          description: "Успешно"
+  /studentStory/{id}:
+    get:
+      tags:
+      - "studentStory"
+      summary: "Получить историю по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id истории, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/studentStories"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История не найдена"
+    put:
+      tags:
+      - "studentStory"
+      summary: "Обновить историю студента"
+      description: ""
+      operationId: "updateStudentStory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id истории"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "studentStory"
+        description: "Обновляем объект studentStory"
+        required: true
+        schema:
+          $ref: "#/definitions/studentStories"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История не найдена"
+    delete:
+      tags:
+      - "studentStory"
+      summary: "Удаление истории"
+      description: ""
+      operationId: "deleteStudentStory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой истории"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История не найдена"
+  /teacherPoint:
+    post:
+      tags:
+      - "teacherPoint"
+      summary: "Создаем историю баллов преподавателя"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "teacherPoint"
+        description: "Создаем объект teacherPoint"
+        required: true
+        schema:
+            $ref: "#/definitions/teacherpoints"
+      responses:
+        default:
+          description: "Успешно"
+  /teacherPoint/{id}:
+    get:
+      tags:
+      - "teacherPoint"
+      summary: "Получить историю баллов по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id истории баллов, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/teacherpoints"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История баллов не найдена"
+    put:
+      tags:
+      - "teacherPoint"
+      summary: "Обновить историю баллов преподавателя"
+      description: ""
+      operationId: "updateTeacherPoint"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id истории"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "teacherPoint"
+        description: "Обновляем объект teacherPoint"
+        required: true
+        schema:
+          $ref: "#/definitions/teacherpoints"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История баллов не найдена"
+    delete:
+      tags:
+      - "teacherPoint"
+      summary: "Удаление истории баллов"
+      description: ""
+      operationId: "deleteTeacherPoint"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой истории баллов"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "История баллов не найдена"
+  /teacher:
+    post:
+      tags:
+      - "teacher"
+      summary: "Создаем учителя"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "teacher"
+        description: "Создаем объект teacher"
+        required: true
+        schema:
+            $ref: "#/definitions/teachers"
+      responses:
+        default:
+          description: "Успешно"
+  /teacher/{id}:
+    get:
+      tags:
+      - "teacher"
+      summary: "Получить учителя по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id учителя, которого нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/teachers"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Учитель не найден"
+    put:
+      tags:
+      - "teacher"
+      summary: "Обновить информацию о учителе"
+      description: ""
+      operationId: "updateTeacher"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id учителя"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "teacher"
+        description: "Обновляем объект teacher"
+        required: true
+        schema:
+          $ref: "#/definitions/teachers"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Учитель не найден"
+    delete:
+      tags:
+      - "teacher"
+      summary: "Удаление учителя"
+      description: ""
+      operationId: "deleteTeacher"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого учителя"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Учитель не найден"
+  /transaction:
+    post:
+      tags:
+      - "transaction"
+      summary: "Создаем транзакцию"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "transaction"
+        description: "Создаем объект transaction"
+        required: true
+        schema:
+            $ref: "#/definitions/transactions"
+      responses:
+        default:
+          description: "Успешно"
+  /transaction/{id}:
+    get:
+      tags:
+      - "transaction"
+      summary: "Получить транзакцию по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id транзакции, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/transactions"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Транзакция не найдена"
+    put:
+      tags:
+      - "transaction"
+      summary: "Обновить информацию о транзакции"
+      description: ""
+      operationId: "updateTransaction"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id транзакции"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "transaction"
+        description: "Обновляем объект transaction"
+        required: true
+        schema:
+          $ref: "#/definitions/transactions"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Транзакция не найдена"
+    delete:
+      tags:
+      - "transaction"
+      summary: "Удаление транзакции"
+      description: ""
+      operationId: "deleteTransaction"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой транзакции"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Транзакция не найдена"
+  /users:
+    get:
+      tags:
+      - "user"
+      summary: "Получить список пользователей"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "page"
+        description: ""
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/users"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Пользователи не найдены"
+  /user/{id}:
+    get:
+      tags:
+      - "user"
+      summary: "Получить пользователя по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id пользователя, кторого нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/users"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Пользователь не найден"
+    put:
+      tags:
+      - "user"
+      summary: "Обновить информацию о пользователе"
+      description: ""
+      operationId: "updateUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого пользователя"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "user"
+        description: "Обновляем объект пользователь"
+        required: true
+        schema:
+          $ref: "#/definitions/users"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Пользователь не найден"
+    delete:
+      tags:
+      - "user"
+      summary: "Удаление пользователя"
+      description: ""
+      operationId: "deleteUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого пользователя"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Пользователь не найден"
+  /userdevice:
+    post:
+      tags:
+      - "userdevice"
+      summary: "Записываем устройство пользователя"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "userdevice"
+        description: "Создаем объект userdevice"
+        required: true
+        schema:
+            $ref: "#/definitions/userdevices"
+      responses:
+        default:
+          description: "Успешно"
+  /userdevice/{id}:
+    get:
+      tags:
+      - "userdevice"
+      summary: "Получаем устройство пользователя по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Id устройства пользователя, которое нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/userdevices"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Устройство не найдено"
+    put:
+      tags:
+      - "userdevice"
+      summary: "Обновить информацию о устройстве пользователя"
+      description: ""
+      operationId: "updateUserdevice"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого устройства"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "userdevice"
+        description: "Обновляем объект userdevice"
+        required: true
+        schema:
+          $ref: "#/definitions/userdevices"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Устройство не найдено"
+    delete:
+      tags:
+      - "userdevice"
+      summary: "Удаление устройства"
+      description: ""
+      operationId: "deleteUserdevice"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого устройства"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Устройство не найдено"
+  /userRequest:
+    post:
+      tags:
+      - "userRequest"
+      summary: "Создаем заявку с сайта"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "userRequest"
+        description: "Создаем объект userRequest"
+        required: true
+        schema:
+            $ref: "#/definitions/userrequests"
+      responses:
+        default:
+          description: "Успешно"
+  /userRequest/{id}:
+    get:
+      tags:
+      - "userRequest"
+      summary: "Получить заявку по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id заявки, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/userrequests"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+    put:
+      tags:
+      - "userRequest"
+      summary: "Обновить информацию о заявке"
+      description: ""
+      operationId: "updateUserRequest"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id заявки"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "userRequest"
+        description: "Обновляем объект userRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/userrequests"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+    delete:
+      tags:
+      - "userRequest"
+      summary: "Удаление заявки"
+      description: ""
+      operationId: "deleteUserRequest"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой заявки"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Заявка не найдена"
+  /webinarComment:
+    post:
+      tags:
+      - "webinarComment"
+      summary: "Создаем комментарий к вебинару"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "webinarComment"
+        description: "Создаем объект webinarComment"
+        required: true
+        schema:
+            $ref: "#/definitions/webinarcomments"
+      responses:
+        default:
+          description: "Успешно"
+  /webinarComment/{id}:
+    get:
+      tags:
+      - "webinarComment"
+      summary: "Получить комментарий по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id комментария, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/webinarcomments"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найден"
+    put:
+      tags:
+      - "webinarComment"
+      summary: "Обновить информацию о комментарии"
+      description: ""
+      operationId: "updateWebinarComment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id заявки"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "webinarComment"
+        description: "Обновляем объект webinarComment"
+        required: true
+        schema:
+          $ref: "#/definitions/webinarcomments"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найден"
+    delete:
+      tags:
+      - "webinarComment"
+      summary: "Удаление комментария"
+      description: ""
+      operationId: "deleteWebinarComment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого комментария"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Комментарий не найден"
+  /webinar:
+    post:
+      tags:
+      - "webinar"
+      summary: "Создаем вебинар"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "webinar"
+        description: "Создаем объект webinar"
+        required: true
+        schema:
+            $ref: "#/definitions/webinars"
+      responses:
+        default:
+          description: "Успешно"
+  /webinar/{id}:
+    get:
+      tags:
+      - "webinar"
+      summary: "Получить вебинар по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id вебинара, который нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/webinars"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вебинар не найден"
+    put:
+      tags:
+      - "webinar"
+      summary: "Обновить информацию о вебинаре"
+      description: ""
+      operationId: "updateWebinar"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id вебинара"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "webinar"
+        description: "Обновляем объект webinar"
+        required: true
+        schema:
+          $ref: "#/definitions/webinars"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вебинар не найден"
+    delete:
+      tags:
+      - "webinar"
+      summary: "Удаление вебинара"
+      description: ""
+      operationId: "deleteWebinar"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого вебинара"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Вебинар не найден"
+  /webinarsAllSubscribe:
+    post:
+      tags:
+      - "webinarsAllSubscribe"
+      summary: "Создаем подписку на новые вебинары"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "webinarsAllSubscribe"
+        description: "Создаем объект webinarsAllSubscribe"
+        required: true
+        schema:
+            $ref: "#/definitions/webinarsallsubscribe"
+      responses:
+        default:
+          description: "Успешно"
+  /webinarsAllSubscribe/{id}:
+    get:
+      tags:
+      - "webinarsAllSubscribe"
+      summary: "Получить подписку на новые вебинары по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id подписки, которую нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/webinarsallsubscribe"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+    put:
+      tags:
+      - "webinarsAllSubscribe"
+      summary: "Обновить информацию о подписке на новые вебинары"
+      description: ""
+      operationId: "updateWebinarsAllSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемой подписки"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "webinarsAllSubscribe"
+        description: "Обновляем объект webinarsAllSubscribe"
+        required: true
+        schema:
+          $ref: "#/definitions/webinarsallsubscribe"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+    delete:
+      tags:
+      - "webinarsAllSubscribe"
+      summary: "Удаление подписки на новые вебинары"
+      description: ""
+      operationId: "deleteWebinarsAllSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемой подписки"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Подписка не найдена"
+  /webinarSubscribe:
+    post:
+      tags:
+      - "webinarSubscribe"
+      summary: "Создаем уведомление о начале вебинара"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "webinarSubscribe"
+        description: "Создаем объект webinarSubscribe"
+        required: true
+        schema:
+            $ref: "#/definitions/webinarsubscribes"
+      responses:
+        default:
+          description: "Успешно"
+  /webinarSubscribe/{id}:
+    get:
+      tags:
+      - "webinarSubscribe"
+      summary: "Получить уведомление о начале вебинара по id"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id уведомления, которое нужно получить"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Успешно"
+          schema:
+            $ref: "#/definitions/webinarsubscribes"
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Уведомление не найдено"
+    put:
+      tags:
+      - "webinarSubscribe"
+      summary: "Обновить информацию о уведомлении о начале вебинара"
+      description: ""
+      operationId: "updateWebinarSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id обновляемого уведомления"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "webinarSubscribe"
+        description: "Обновляем объект webinarSubscribe"
+        required: true
+        schema:
+          $ref: "#/definitions/webinarsubscribes"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Уведомление не найдено"
+    delete:
+      tags:
+      - "webinarSubscribe"
+      summary: "Удаление уведомления о начале вебинара"
+      description: ""
+      operationId: "deleteWebinarSubscribe"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "id удаляемого уведомления"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Неверный запрос"
+        "404":
+          description: "Уведомление не найдено"
+definitions:
+  answers:
+    description: beautynation.answers
+    properties:
+      id:
+        type: integer
+      idQuestion:
+        type: integer
+      order:
+        type: integer
+      description:
+        type: string
+      isCorrect:
+        type: boolean
+    required:
+      - id
+      - idQuestion
+      - order
+      - description
+      - isCorrect
+  blogs:
+    description: beautynation.blog
+    properties:
+      id:
+        type: integer
+      idDirection:
+        type: integer
+      idCourse:
+        type: integer
+      lang:
+        type: string
+      metaTitle:
+        type: string
+      metaDescription:
+        type: string
+      metaKeywords:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      datePublished:
+        type: string
+        format: date
+      isPublish:
+        type: boolean
+      picture:
+        type: string
+      title:
+        type: string
+      miniDescription:
+        type: string
+      content:
+        type: string
+      authorName:
+        type: string
+      authorAvatar:
+        type: string
+      authorLink:
+        type: string
+      authorDescription:
+        type: string
+      countOfLike:
+        type: integer
+      countOfViews:
+        type: integer
+      tags:
+        type: string
+    required:
+    - id
+    - idDirection
+    - lang
+    - dateCreated
+    - isPublish
+    - title
+    - content
+    - countOfLike
+    - countOfViews
+  carts:
+    description: beautynation.carts
+    properties:
+      id:
+        type: string
+      idUser:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      idCourse:
+        type: integer
+      idWebinar:
+        type: integer
+      count:
+        type: integer
+      promocode:
+        type: string
+    required:
+    - id
+    - idUser
+    - dateCreated
+    - count
+  commentsHomeworks:
+    description: beautynation.commentsHomeworks
+    properties:
+      id:
+        type: integer
+      idHomework:
+        type: integer
+      idUser:
+        type: string
+      idUserAsTeacher:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      dateEdited:
+        type: string
+        format: date
+      comment:
+        type: string
+      attachments:
+        type: string
+    required:
+    - id
+    - idHomework
+    - idUser
+    - dateCreated
+    - dateEdited
+    - comment
+  constructors:
+    description: beautynation.constructors
+    properties:
+      id:
+        type: integer
+      order:
+        type: integer
+      name:
+        type: string
+      value:
+        type: string
+    required:
+    - id
+    - order
+    - name
+    - value
+  courses:
+    description: beautynation.courses
+    properties:
+      id:
+        type: integer
+      idDirection:
+        type: integer
+      lang:
+        type: string
+      metaTitle:
+        type: string
+      metaDescriptions:
+        type: string
+      metaKeywords:
+        type: string
+      dataCreated:
+        type: string
+        format: date
+      isPublish:
+        type: boolean
+      isProfession:
+        type: boolean
+      title:
+        type: string
+      dateStart:
+        type: string
+        format: date
+      costOld:
+        type: number
+      costNew:
+        type: number
+    required:
+    - id
+    - idDirection
+    - dataCreated
+    - lang
+    - isPublish
+    - isProfession
+    - title
+    - dateStart
+    - costOld
+    - costNew
+  coursesAllSubscribe:
+    description: beautynation.coursesAllSubscribe
+    properties:
+      id:
+        type: integer
+      dateCreated:
+        type: string
+        format: date
+      email:
+        type: string
+    required:
+    - id
+    - dateCreated
+    - email
+  dictionaries:
+    description: beautynation.dictionaries
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      key:
+        type: string
+      value:
+        type: string
+      description:
+        type: string
+      meta:
+        type: string
+    required:
+    - id
+    - lang
+    - key
+    - description
+  directions:
+    description: beautynation.directions
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      metaTitle:
+        type: string
+      metaDescription:
+        type: string
+      metaKeywords:
+        type: string
+      dataCreated:
+        type: string
+        format: date
+      isPublish:
+        type: boolean
+      order:
+        type: integer
+      alias:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      iconPath:
+        type: string
+    required:
+    - id
+    - lang
+    - dataCreated
+    - isPublish
+    - order
+    - alias
+    - title
+  homeworks:
+    description: beautynation.homeworks
+    properties:
+      id:
+        type: integer
+      idLesson:
+        type: integer
+      description:
+        type: string
+      resultDescription:
+        type: string
+    required:
+    - id
+    - idLesson
+  lessons:
+    description: beautynation.lessons
+    properties:
+      id:
+        type: integer
+      idModule:
+        type: integer
+      title:
+        type: string
+      order:
+        type: integer
+      isEmpty:
+        type: boolean
+      description:
+        type: string
+      video:
+        type: string
+      videoDuration:
+        type: string
+      picture:
+        type: string
+      attachments:
+        type: string
+      rating:
+        type: number
+    required:
+    - id
+    - idModule
+    - title
+    - order
+    - isEmpty
+  linkConstructorsCourses:
+    description: beautynation.linkConstructorsCourses
+    properties:
+      idBlock:
+        type: integer
+      idCourse:
+        type: integer
+    required:
+    - idBlock
+    - idCourse
+  linkPartnersCourses:
+    description: beautynation.linkPartnersCourses
+    properties:
+      idPartner:
+        type: integer
+      idCourse:
+        type: integer
+    required:
+    - idPartner
+    - idCourse
+  linkTeacherCourses:
+    description: beautynation.linkTeacherCourses
+    properties:
+      idUser:
+        type: string
+      idCourse:
+        type: integer
+    required:
+    - idUser
+    - idCourse
+  linkuserscourses:
+    description: beautynation.linkuserscourses
+    properties:
+      idUser:
+        type: string
+      idCourse:
+        type: integer
+      idTransaction:
+        type: string
+    required:
+    - idUser
+    - idCourse
+    - idTransaction
+  linkusersroles:
+    description: beautynation.linkusersroles
+    properties:
+      idUser:
+        type: string
+      idRole:
+        type: integer
+    required:
+    - idUser
+    - idRole
+  loyalties:
+    description: beautynation.loyalties
+    properties:
+      id:
+        type: integer
+      idUserOwner:
+        type: string
+      idUserInitiator:
+        type: string
+      idTransaction:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      points:
+        type: integer
+      promocode:
+        type: string
+    required:
+    - id
+    - idUserOwner
+    - dateCreated
+    - points
+    - promocode
+  massMediaMentions:
+    description: beautynation.massMediaMentions
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      isPublish:
+        type: boolean
+      datePublished:
+        type: string
+        format: date
+      picture:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      sourceLink:
+        type: string
+      sourceLogo:
+        type: string
+    required:
+    - id
+    - lang
+    - isPublish
+    - datePublished
+    - title
+    - description
+  modules:
+    description: beautynation.modules
+    properties:
+      id:
+        type: integer
+      idCourse:
+        type: integer
+      isPublish:
+        type: boolean
+      order:
+        type: integer
+      title:
+        type: string
+    required:
+    - id
+    - idCourse
+    - isPublish
+    - order
+    - title
+  partners:
+    description: beautynation.partners
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      isPublish:
+        type: boolean
+      name:
+        type: string
+      pathToLogo:
+        type: string
+      specialization:
+        type: string
+      agent:
+        type: string
+    required:
+    - id
+    - lang
+    - isPublish
+    - name
+  polls:
+    description: beautynation.polls
+    properties:
+      id:
+        type: integer
+      idLesson:
+        type: integer
+      title:
+        type: string
+    required:
+    - id
+    - idLesson
+    - title
+  postcountries:
+    description: beautynation.postcountries
+    properties:
+      id:
+        type: integer
+      nameShort:
+        type: string
+      name:
+        type: string
+      nameOriginal:
+        type: string
+    required:
+    - id
+    - nameShort
+    - name
+  postsubjects:
+    description: beautynation.postsubjects
+    properties:
+      id:
+        type: integer
+      idCountry:
+        type: integer
+      name:
+        type: string
+    required:
+    - id
+    - idCountry
+    - name
+  promocoderequests:
+    description: beautynation.promocoderequests
+    properties:
+      id:
+        type: integer
+      idWebinar:
+        type: integer
+      idCourse:
+        type: integer
+      idUser:
+        type: string
+      promocode:
+        type: string
+      isUsed:
+        type: boolean
+    required:
+    - id
+    - idWebinar
+    - idCourse
+    - idUser
+    - promocode
+    - isUsed
+  promocodes:
+    description: beautynation.promocodes
+    properties:
+      id:
+        type: integer
+      idCourse:
+        type: integer
+      idWebinar:
+        type: integer
+      dateStart:
+        type: string
+        format: date
+      dateEnd:
+        type: string
+        format: date
+      costWithDiscount:
+        type: number
+    required:
+    - id
+    - idCourse
+    - idWebinar
+    - dateStart
+    - dateEnd
+    - costWithDiscount
+  questions:
+    description: beautynation.questions
+    properties:
+      id:
+        type: integer
+      idPoll:
+        type: integer
+      description:
+        type: string
+      order:
+        type: integer
+      type:
+        type: string
+    required:
+    - id
+    - idPoll
+    - description
+    - order
+    - type
+  ratings:
+    description: beautynation.ratings
+    properties:
+      id:
+        type: integer
+      idLesson:
+        type: integer
+      idUser:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      value:
+        type: number
+    required:
+    - id
+    - idLesson
+    - idUser
+    - dateCreated
+    - value
+  roles:
+    description: beautynation.roles
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    required:
+    - id
+    - name
+  statuseshomeworks:
+    description: beautynation.statuseshomeworks
+    properties:
+      id:
+        type: integer
+      idHomework:
+        type: integer
+      idUser:
+        type: string
+      dateStartForCheck:
+        type: integer
+      isReady:
+        type: integer
+    required:
+    - id
+    - idHomework
+    - idUser
+    - dateStartForCheck
+    - isReady
+  studentReview:
+    description: beautynation.studentReview
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      isPublish:
+        type: boolean
+      dateCreated:
+        type: string
+        format: date
+      comment:
+        type: string
+      link:
+        type: string
+      linkText:
+        type: string
+    required:
+    - id
+    - lang
+    - isPublish
+    - dateCreated
+    - comment
+  studentStories:
+    description: beautynation.studentStories
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+      isPublish:
+        type: boolean
+      dateCreated:
+        type: string
+        format: date
+      fio:
+        type: string
+      link:
+        type: string
+      avatar:
+        type: string
+      comment:
+        type: string
+      socialNetwork:
+        type: string
+    required:
+    - id
+    - lang
+    - isPublish
+    - dateCreated
+    - fio
+    - comment
+  teacherpoints:
+    description: beautynation.teacherpoints
+    properties:
+      id:
+        type: string
+      idTeacher:
+        type: string
+      idStatusHomework:
+        type: integer
+      dataCreated:
+        type: string
+        format: date
+      points:
+        type: integer
+      reason:
+        type: string
+      isPaid:
+        type: boolean
+      datePayment:
+        type: string
+        format: date
+    required:
+    - id
+    - idTeacher
+    - idStatusHomework
+    - dataCreated
+    - points
+    - reason
+    - isPaid
+  teachers:
+    description: beautynation.teachers
+    properties:
+      id:
+        type: string
+      lang:
+        type: string
+      position:
+        type: string
+      schedule:
+        type: string
+    required:
+    - id
+    - lang
+    - schedule
+  transactions:
+    description: beautynation.transactions
+    properties:
+      id:
+        type: string
+      dateCreated:
+        type: string
+        format: date
+      idUser:
+        type: string
+      purchasedObject:
+        type: string
+      priceTotal:
+        type: number
+      userPoints:
+        type: integer
+      promocode:
+        type: string
+      promocodeType:
+        type: string
+      paymentId:
+        type: string
+      paymentStatus:
+        type: boolean
+      paymentMethod:
+        type: string
+      paymentCurrency:
+        type: string
+      paymentDatetime:
+        type: string
+        format: date
+    required:
+    - id
+    - dateCreated
+    - idUser
+    - purchasedObject
+    - priceTotal
+    - userPoints
+  userdevices:
+    description: beautynation.userdevices
+    properties:
+      id:
+        type: integer
+      idUser:
+        type: string
+      parameters:
+        type: string
+    required:
+    - id
+    - idUser
+    - parameters
+  userrequests:
+    description: beautynation.userrequests
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      email:
+        type: string
+      comment:
+        type: string
+      subscribeConfirmed:
+        type: boolean
+    required:
+    - id
+    - name
+    - email
+    - subscribeConfirmed
+  users:
+    description: beautynation.users
+    properties:
+      id:
+        type: string
+      dateCreation:
+        type: string
+        format: date
+      surname:
+        type: string
+      name:
+        type: string
+      middlename:
+        type: string
+      email:
+        type: string
+      hasConfirmEmail:
+        type: boolean
+      phone:
+        type: string
+      passwordHash:
+        type: string
+      datePasswordChange:
+        type: string
+        format: date
+      idCountry:
+        type: integer
+      idSubject:
+        type: integer
+      postCity:
+        type: string
+      gender:
+        type: boolean
+      birthday:
+        type: string
+        format: date
+      avatar:
+        type: string
+      promocode:
+        type: string
+    required:
+    - id
+    - dateCreation
+    - email
+    - hasConfirmEmail
+    - promocode
+  webinarcomments:
+    description: beautynation.webinarcomments
+    properties:
+      id:
+        type: integer
+      idUser:
+        type: string
+      idWebinar:
+        type: integer
+      dateCreated:
+        type: string
+        format: date
+      comment:
+        type: string
+      countOfLike:
+        type: integer
+    required:
+    - id
+    - idUser
+    - idWebinar
+    - dateCreated
+    - comment
+    - countOfLike
+  webinars:
+    description: beautynation.webinars
+    properties:
+      id:
+        type: integer
+      idDirection:
+        type: integer
+      idTeacher:
+        type: integer
+      lang:
+        type: string
+      metaTitle:
+        type: string
+      metaDescriptions:
+        type: string
+      metaKeywords:
+        type: string
+      isPublish:
+        type: boolean
+      isLive:
+        type: boolean
+      dateCreated:
+        type: string
+        format: date
+      dateStart:
+        type: string
+        format: date
+      dateEnd:
+        type: string
+        format: date
+      title:
+        type: string
+      description:
+        type: string
+      countOfLike:
+        type: integer
+      countOfViews:
+        type: integer
+    required:
+    - id
+    - idDirection
+    - lang
+    - isPublish
+    - isLive
+    - dateCreated
+    - dateStart
+    - dateEnd
+    - title
+    - countOfLike
+    - countOfViews
+  webinarsallsubscribe:
+    description: beautynation.webinarsallsubscribe
+    properties:
+      id:
+        type: integer
+      dateCreated:
+        type: string
+        format: date
+      email:
+        type: string
+    required:
+    - id
+    - dateCreated
+    - email
+  webinarsubscribes:
+    description: beautynation.webinarsubscribes
+    properties:
+      id:
+        type: integer
+      idWebinar:
+        type: integer
+      dateCreated:
+        type: string
+        format: date
+      email:
+        type: string
+    required:
+    - id
+    - idWebinar
+    - dateCreated
+    - email
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

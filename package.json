@@ -1,0 +1,51 @@
+{
+  "name": "BeautyNation",
+  "version": "1.0.0",
+  "description": "Beauty University",
+  "author": "AFFINAGE",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "swagger": "nodemon --watch ./swagger ./swagger/server.js",
+    "eslint": "eslint --ext .js,.vue --ignore-path .eslintignore .",
+    "stylelint": "stylelint **/*.{scss,vue}"
+  },
+  "pre-commit": [
+    "eslint",
+    "stylelint"
+  ],
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.7",
+    "nuxt": "^2.14.12",
+    "sass-loader": "^8.0.2",
+    "swagger-jsdoc": "^4.3.2",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^3.1.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-lodash": "^5.1.0",
+    "eslint-plugin-nuxt": "^0.4.3",
+    "eslint-plugin-sonarjs": "^0.4.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "husky": "^4.3.8",
+    "pre-commit": "^1.2.2",
+    "stylelint": "^10.1.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
+    "stylelint-order": "^3.0.1"
+  }
+}
